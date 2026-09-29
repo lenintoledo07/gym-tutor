@@ -1,0 +1,8 @@
+# Configuración mínima para usar la Supabase CLI localmente (opcional)
+project_id = "gym-tutor"
+
+[functions.coach]
+verify_jwt = true
+
+[functions.insights]
+verify_jwt = true
