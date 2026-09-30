@@ -45,10 +45,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     loading,
     refreshProfile: () => loadProfile(session?.user.id),
     signInWithGoogle: async () => {
-      await supabase.auth.signInWithOAuth({
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo: window.location.origin, queryParams: { prompt: "select_account" } },
       });
+      if (error) throw error;
     },
     signOut: async () => {
       await supabase.auth.signOut();
