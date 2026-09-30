@@ -8,3 +8,4 @@ dev-dist
 .vercel
 supabase/.temp
 supabase/.branches
+*.tsbuildinfo
